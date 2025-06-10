@@ -1,0 +1,65 @@
+.button {
+    display: flex;                                      /* Выставляем боковое отображение */
+    align-items: center;                                /* Выравниваем все элементы внутри контейнера */
+    column-gap: 10px;                                   /* Задаем расстояние между колонками */
+
+    padding: 24px;                                      /* Отступы внутри кнопки */
+    height: 72px;                                       /* Выставляем высоту кнопки */
+    
+    background: #7B61FF;                              /* Цвет кнопки кнопки */
+    border-radius: 12px;                                /* Закругление кнопки */
+
+    color: #fff;                                      /* Цвет текста кнопки */
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: background-color 0.2s ease-in;           /* Анимация смены стиля кнопки */
+}
+
+.button:hover {
+    background-color: #6344ff;                         /* Смена цвета при наведении */
+}
+
+.button--huge {
+    padding: 24px;                                        /* Внутренние отступы */
+    font-size: 18px;                                      /* Размер шрифта */
+    font-weight: 600;                                     /* Стиль шрифта */
+
+    display: flex;                                        /* Выставляем боковое отображение */
+    column-gap: 8px;                                      /* Выставляем расстояние между колоннами */
+    align-items: center;                                  /* Всё по центру */
+}
+
+
+.button--search {                                           
+    height: 60px;                                           /* Высота кнопки поиска */
+    width: 60px;                                            /* Ширина кнопки поиска */
+    padding: 18px;                                          /* Отступы внутри кнопки */
+}
+
+.button--subscribe {
+    width: 72px;
+    height: 72px;
+    padding: 28px;
+}
+
+/* Button More */
+
+.button-more {
+    display: flex;                                          /* Выставляем боковое отображение */
+    align-items: center;                                    /* Выставляем отображение по центру */
+    gap: 4px;                                               /* Расстояние между текстом и стрелочкой */
+
+    padding: 10px;                                          /* Внутренние отсутпы на кнопке */
+    height: 44px;                                           /* Высота кнопки */
+    background: #F6F4FF;                                  
+    border-radius: 12px;                                    /* Закругление кнопки */
+    font-size: 16px;
+    color: #5243c2;
+
+    transition: background-color 0.2s ease-in;
+}
+
+.button-more:hover {
+    background: #dcd8f1;
+}
