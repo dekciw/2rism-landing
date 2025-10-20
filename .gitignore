@@ -1,0 +1,15 @@
+# Node/tooling (вдруг появятся)
+node_modules/
+.DS_Store
+.env
+*.log
+
+# Build artifacts
+/dist
+/build
+.tmp
+.cache
+
+# Editors
+.vscode/
+.idea/
