@@ -1,17 +1,22 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.autoComplete = factory());
-})(this, (function () { 'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? (module.exports = factory())
+    : typeof define === "function" && define.amd
+    ? define(factory)
+    : ((global = typeof globalThis !== "undefined" ? globalThis : global || self), (global.autoComplete = factory()));
+})(this, function () {
+  "use strict";
 
   function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
       var symbols = Object.getOwnPropertySymbols(object);
-      enumerableOnly && (symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      })), keys.push.apply(keys, symbols);
+      enumerableOnly &&
+        (symbols = symbols.filter(function (sym) {
+          return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        })),
+        keys.push.apply(keys, symbols);
     }
 
     return keys;
@@ -20,11 +25,15 @@
   function _objectSpread2(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = null != arguments[i] ? arguments[i] : {};
-      i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
+      i % 2
+        ? ownKeys(Object(source), !0).forEach(function (key) {
+            _defineProperty(target, key, source[key]);
+          })
+        : Object.getOwnPropertyDescriptors
+        ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source))
+        : ownKeys(Object(source)).forEach(function (key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+          });
     }
 
     return target;
@@ -33,11 +42,19 @@
   function _typeof(obj) {
     "@babel/helpers - typeof";
 
-    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
-      return typeof obj;
-    } : function (obj) {
-      return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    }, _typeof(obj);
+    return (
+      (_typeof =
+        "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+          ? function (obj) {
+              return typeof obj;
+            }
+          : function (obj) {
+              return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype
+                ? "symbol"
+                : typeof obj;
+            }),
+      _typeof(obj)
+    );
   }
 
   function _defineProperty(obj, key, value) {
@@ -46,7 +63,7 @@
         value: value,
         enumerable: true,
         configurable: true,
-        writable: true
+        writable: true,
       });
     } else {
       obj[key] = value;
@@ -64,7 +81,8 @@
   }
 
   function _iterableToArray(iter) {
-    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+    if ((typeof Symbol !== "undefined" && iter[Symbol.iterator] != null) || iter["@@iterator"] != null)
+      return Array.from(iter);
   }
 
   function _unsupportedIterableToArray(o, minLen) {
@@ -85,14 +103,20 @@
   }
 
   function _nonIterableSpread() {
-    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    throw new TypeError(
+      "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+    );
   }
 
   function _createForOfIteratorHelper(o, allowArrayLike) {
-    var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+    var it = (typeof Symbol !== "undefined" && o[Symbol.iterator]) || o["@@iterator"];
 
     if (!it) {
-      if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (
+        Array.isArray(o) ||
+        (it = _unsupportedIterableToArray(o)) ||
+        (allowArrayLike && o && typeof o.length === "number")
+      ) {
         if (it) o = it;
         var i = 0;
 
@@ -101,27 +125,30 @@
         return {
           s: F,
           n: function () {
-            if (i >= o.length) return {
-              done: true
-            };
+            if (i >= o.length)
+              return {
+                done: true,
+              };
             return {
               done: false,
-              value: o[i++]
+              value: o[i++],
             };
           },
           e: function (e) {
             throw e;
           },
-          f: F
+          f: F,
         };
       }
 
-      throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+      throw new TypeError(
+        "Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+      );
     }
 
     var normalCompletion = true,
-        didErr = false,
-        err;
+      didErr = false,
+      err;
     return {
       s: function () {
         it = it.call(o);
@@ -141,7 +168,7 @@
         } finally {
           if (didErr) throw err;
         }
-      }
+      },
     };
   }
 
@@ -174,7 +201,12 @@
   };
   var format = function format(value, diacritics) {
     value = String(value).toLowerCase();
-    return diacritics ? value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC") : value;
+    return diacritics
+      ? value
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .normalize("NFC")
+      : value;
   };
   var debounce = function debounce(callback, duration) {
     var timer;
@@ -189,18 +221,24 @@
     return condition ? condition(query) : query.length >= threshold;
   };
   var mark = function mark(value, cls) {
-    return create("mark", _objectSpread2({
-      innerHTML: value
-    }, typeof cls === "string" && {
-      "class": cls
-    })).outerHTML;
+    return create(
+      "mark",
+      _objectSpread2(
+        {
+          innerHTML: value,
+        },
+        typeof cls === "string" && {
+          class: cls,
+        }
+      )
+    ).outerHTML;
   };
 
-  var configure = (function (ctx) {
+  var configure = function (ctx) {
     var name = ctx.name,
-        options = ctx.options,
-        resultsList = ctx.resultsList,
-        resultItem = ctx.resultItem;
+      options = ctx.options,
+      resultsList = ctx.resultsList,
+      resultItem = ctx.resultItem;
     for (var option in options) {
       if (_typeof(options[option]) === "object") {
         if (!ctx[option]) ctx[option] = {};
@@ -216,21 +254,23 @@
     resultsList.id = resultsList.id || name + "_list_" + ctx.id;
     resultItem.id = resultItem.id || name + "_result";
     ctx.input = select$1(ctx.selector);
-  });
+  };
 
-  var eventEmitter = (function (name, ctx) {
-    ctx.input.dispatchEvent(new CustomEvent(name, {
-      bubbles: true,
-      detail: ctx.feedback,
-      cancelable: true
-    }));
-  });
+  var eventEmitter = function (name, ctx) {
+    ctx.input.dispatchEvent(
+      new CustomEvent(name, {
+        bubbles: true,
+        detail: ctx.feedback,
+        cancelable: true,
+      })
+    );
+  };
 
-  var search = (function (query, record, options) {
+  var search = function (query, record, options) {
     var _ref = options || {},
-        mode = _ref.mode,
-        diacritics = _ref.diacritics,
-        highlight = _ref.highlight;
+      mode = _ref.mode,
+      diacritics = _ref.diacritics,
+      highlight = _ref.highlight;
     var nRecord = format(record, diacritics);
     record = String(record);
     query = format(query, diacritics);
@@ -238,13 +278,15 @@
       query = query.replace(/ /g, "");
       var qLength = query.length;
       var cursor = 0;
-      var match = Array.from(record).map(function (character, index) {
-        if (cursor < qLength && nRecord[index] === query[cursor]) {
-          character = highlight ? mark(character, highlight) : character;
-          cursor++;
-        }
-        return character;
-      }).join("");
+      var match = Array.from(record)
+        .map(function (character, index) {
+          if (cursor < qLength && nRecord[index] === query[cursor]) {
+            character = highlight ? mark(character, highlight) : character;
+            cursor++;
+          }
+          return character;
+        })
+        .join("");
       if (cursor === qLength) return match;
     } else {
       var _match = nRecord.indexOf(query);
@@ -254,7 +296,7 @@
         return _match;
       }
     }
-  });
+  };
 
   var getData = function getData(ctx, query) {
     return new Promise(function ($return, $error) {
@@ -279,29 +321,32 @@
   };
   var findMatches = function findMatches(query, ctx) {
     var data = ctx.data,
-        searchEngine = ctx.searchEngine;
+      searchEngine = ctx.searchEngine;
     var matches = [];
     data.store.forEach(function (value, index) {
       var find = function find(key) {
         var record = key ? value[key] : value;
-        var match = typeof searchEngine === "function" ? searchEngine(query, record) : search(query, record, {
-          mode: searchEngine,
-          diacritics: ctx.diacritics,
-          highlight: ctx.resultItem.highlight
-        });
+        var match =
+          typeof searchEngine === "function"
+            ? searchEngine(query, record)
+            : search(query, record, {
+                mode: searchEngine,
+                diacritics: ctx.diacritics,
+                highlight: ctx.resultItem.highlight,
+              });
         if (!match) return;
         var result = {
           match: match,
-          value: value
+          value: value,
         };
         if (key) result.key = key;
         matches.push(result);
       };
       if (data.keys) {
         var _iterator = _createForOfIteratorHelper(data.keys),
-            _step;
+          _step;
         try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          for (_iterator.s(); !(_step = _iterator.n()).done; ) {
             var key = _step.value;
             find(key);
           }
@@ -319,7 +364,7 @@
     ctx.feedback = {
       query: query,
       matches: matches,
-      results: results
+      results: results,
     };
     eventEmitter("results", ctx);
   };
@@ -328,30 +373,39 @@
   var Active = "aria-activedescendant";
   var Selected = "aria-selected";
   var feedback = function feedback(ctx, index) {
-    ctx.feedback.selection = _objectSpread2({
-      index: index
-    }, ctx.feedback.results[index]);
+    ctx.feedback.selection = _objectSpread2(
+      {
+        index: index,
+      },
+      ctx.feedback.results[index]
+    );
   };
   var render = function render(ctx) {
     var resultsList = ctx.resultsList,
-        list = ctx.list,
-        resultItem = ctx.resultItem,
-        feedback = ctx.feedback;
+      list = ctx.list,
+      resultItem = ctx.resultItem,
+      feedback = ctx.feedback;
     var matches = feedback.matches,
-        results = feedback.results;
+      results = feedback.results;
     ctx.cursor = -1;
     list.innerHTML = "";
     if (matches.length || resultsList.noResults) {
       var fragment = new DocumentFragment();
       results.forEach(function (result, index) {
-        var element = create(resultItem.tag, _objectSpread2({
-          id: "".concat(resultItem.id, "_").concat(index),
-          role: "option",
-          innerHTML: result.match,
-          inside: fragment
-        }, resultItem["class"] && {
-          "class": resultItem["class"]
-        }));
+        var element = create(
+          resultItem.tag,
+          _objectSpread2(
+            {
+              id: "".concat(resultItem.id, "_").concat(index),
+              role: "option",
+              innerHTML: result.match,
+              inside: fragment,
+            },
+            resultItem["class"] && {
+              class: resultItem["class"],
+            }
+          )
+        );
         if (resultItem.element) resultItem.element(element, result);
       });
       list.append(fragment);
@@ -389,10 +443,15 @@
       if (state > -1) {
         var _results$state$classL;
         results[state].removeAttribute(Selected);
-        if (cls) (_results$state$classL = results[state].classList).remove.apply(_results$state$classL, _toConsumableArray(cls));
+        if (cls)
+          (_results$state$classL = results[state].classList).remove.apply(
+            _results$state$classL,
+            _toConsumableArray(cls)
+          );
       }
       results[index].setAttribute(Selected, true);
-      if (cls) (_results$index$classL = results[index].classList).add.apply(_results$index$classL, _toConsumableArray(cls));
+      if (cls)
+        (_results$index$classL = results[index].classList).add.apply(_results$index$classL, _toConsumableArray(cls));
       ctx.input.setAttribute(Active, results[ctx.cursor].id);
       ctx.list.scrollTop = results[index].offsetTop - ctx.list.clientHeight + results[index].clientHeight + 5;
       ctx.feedback.cursor = ctx.cursor;
@@ -443,7 +502,7 @@
     }
   };
 
-  function start (ctx, q) {
+  function start(ctx, q) {
     var _this = this;
     return new Promise(function ($return, $error) {
       var queryVal, condition;
@@ -483,11 +542,14 @@
     var run = debounce(function () {
       return start(ctx);
     }, ctx.debounce);
-    var publicEvents = ctx.events = _objectSpread2({
-      input: _objectSpread2({}, events && events.input)
-    }, ctx.resultsList && {
-      list: events ? _objectSpread2({}, events.list) : {}
-    });
+    var publicEvents = (ctx.events = _objectSpread2(
+      {
+        input: _objectSpread2({}, events && events.input),
+      },
+      ctx.resultsList && {
+        list: events ? _objectSpread2({}, events.list) : {},
+      }
+    ));
     var privateEvents = {
       input: {
         input: function input() {
@@ -498,7 +560,7 @@
         },
         blur: function blur() {
           close(ctx);
-        }
+        },
       },
       list: {
         mousedown: function mousedown(event) {
@@ -506,8 +568,8 @@
         },
         click: function click$1(event) {
           click(event, ctx);
-        }
-      }
+        },
+      },
     };
     eventsManager(privateEvents, function (element, event) {
       if (!ctx.resultsList && event !== "input") return;
@@ -524,7 +586,7 @@
     });
   };
 
-  function init (ctx) {
+  function init(ctx) {
     var _this = this;
     return new Promise(function ($return, $error) {
       var placeHolder, resultsList, parentAttrs;
@@ -534,26 +596,49 @@
         role: "combobox",
         "aria-owns": resultsList.id,
         "aria-haspopup": true,
-        "aria-expanded": false
+        "aria-expanded": false,
       };
-      create(ctx.input, _objectSpread2(_objectSpread2({
-        "aria-controls": resultsList.id,
-        "aria-autocomplete": "both"
-      }, placeHolder && {
-        placeholder: placeHolder
-      }), !ctx.wrapper && _objectSpread2({}, parentAttrs)));
-      if (ctx.wrapper) ctx.wrapper = create("div", _objectSpread2({
-        around: ctx.input,
-        "class": ctx.name + "_wrapper"
-      }, parentAttrs));
-      if (resultsList) ctx.list = create(resultsList.tag, _objectSpread2({
-        dest: [resultsList.destination, resultsList.position],
-        id: resultsList.id,
-        role: "listbox",
-        hidden: "hidden"
-      }, resultsList["class"] && {
-        "class": resultsList["class"]
-      }));
+      create(
+        ctx.input,
+        _objectSpread2(
+          _objectSpread2(
+            {
+              "aria-controls": resultsList.id,
+              "aria-autocomplete": "both",
+            },
+            placeHolder && {
+              placeholder: placeHolder,
+            }
+          ),
+          !ctx.wrapper && _objectSpread2({}, parentAttrs)
+        )
+      );
+      if (ctx.wrapper)
+        ctx.wrapper = create(
+          "div",
+          _objectSpread2(
+            {
+              around: ctx.input,
+              class: ctx.name + "_wrapper",
+            },
+            parentAttrs
+          )
+        );
+      if (resultsList)
+        ctx.list = create(
+          resultsList.tag,
+          _objectSpread2(
+            {
+              dest: [resultsList.destination, resultsList.position],
+              id: resultsList.id,
+              role: "listbox",
+              hidden: "hidden",
+            },
+            resultsList["class"] && {
+              class: resultsList["class"],
+            }
+          )
+        );
       addEvents(ctx);
       if (ctx.data.cache) {
         return getData(ctx).then(function ($await_2) {
@@ -572,7 +657,7 @@
     });
   }
 
-  function extend (autoComplete) {
+  function extend(autoComplete) {
     var prototype = autoComplete.prototype;
     prototype.init = function () {
       init(this);
@@ -621,10 +706,10 @@
     this.resultsList = {
       position: "afterend",
       tag: "ul",
-      maxResults: 5
+      maxResults: 5,
     };
     this.resultItem = {
-      tag: "li"
+      tag: "li",
     };
     configure(this);
     extend.call(this, autoComplete);
@@ -632,5 +717,4 @@
   }
 
   return autoComplete;
-
-}));
+});

@@ -1,77 +1,67 @@
-/* Nav Icon */
-.mobile-nav-btn {
-	--time: 0.1s;
-	--width: 40px;
-	--height: 30px;
-	--line-height: 4px;
-	--color: #fff;
-
-	height: var(--height);
-	width: var(--width);
+/* ========= Кнопка открытия меню ========= */
+.nav__toggle {
+	height: 30px;
+	width: 40px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.nav-icon {
+/* ========= Линия иконки меню ========= */
+.nav__icon {
 	position: relative;
-	width: var(--width);
-	height: var(--line-height);
-	background-color: var(--color);
+	width: 40px;
+	height: 4px;
+	background-color: #fff;
+	transition: background-color 0.1s ease-in;
 }
 
-.nav-icon::before,
-.nav-icon::after {
+/* ========= Дополнительные линии иконки ========= */
+.nav__icon::before,
+.nav__icon::after {
 	content: '';
 	display: block;
 
 	position: absolute;
 	left: 0;
 
-	width: var(--width);
-	height: var(--line-height);
+	width: 40px;
+	height: 4px;
 
-	background-color: var(--color);
-	transition: transform var(--time) ease-in,
-		top var(--time) linear var(--time);
+	background-color: #fff;
+	transition: transform 0.1s ease-in, top 0.1s linear 0.1s;
 }
 
-.nav-icon::before {
-	top: calc(var(--line-height) * -2);
+.nav__icon::before {
+	top: -8px;
 }
 
-.nav-icon::after {
-	top: calc(var(--line-height) * 2);
+.nav__icon::after {
+	top: 8px;
 }
 
-.nav-icon.nav-icon--active {
+.nav__icon.nav__icon--active {
 	background-color: transparent;
 }
 
-.nav-icon.nav-icon--active::before,
-.nav-icon.nav-icon--active::after {
+.nav__icon.nav__icon--active::before,
+.nav__icon.nav__icon--active::after {
 	top: 0;
-	transition: top var(--time) linear,
-		transform var(--time) ease-in var(--time);
+	transition: top 0.1s linear, transform 0.1s ease-in 0.1s;
 }
 
-.nav-icon.nav-icon--active::before {
+/* ========= Верхняя линия при анимации ========= */
+.nav__icon.nav__icon--active::before {
 	transform: rotate(45deg);
 }
 
-.nav-icon.nav-icon--active::after {
+/* ========= Нижняя линия при анимации ========= */
+.nav__icon.nav__icon--active::after {
 	transform: rotate(-45deg);
 }
 
-/* Layout */
-
-.mobile-nav-btn {
+/* ========= Позиционирование кнопки ========= */
+.nav__toggle {
 	z-index: 999;
 	display: none;
 }
-
-/* @media (max-width: 1000px) {
-	.mobile-nav-btn {
-		display: block;
-	}
-} */

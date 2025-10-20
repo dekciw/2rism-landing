@@ -1,61 +1,67 @@
+/* ========= Базовая кнопка ========= */
 .button {
 	background: #7b61ff;
 	border-radius: 12px;
-    color: #fff;
+	color: #fff;
 
-    transition: background-color 0.2s ease-in;
+	transition: background-color 0.2s ease-in;
 }
 
+/* ========= Наведение на кнопку ========= */
 .button:hover {
 	background-color: #6344ff;
 }
 
+/* ========= Кнопка крупного формата ========= */
 .button--huge {
-    padding: 24px;
-    font-size: 18px;
-    font-weight: 600;
+	padding: 24px;
+	font-size: 18px;
+	font-weight: 600;
 
-    display: flex;
-    column-gap: 8px;
-    align-items: center;
+	display: flex;
+	column-gap: 8px;
+	align-items: center;
 }
 
+/* ========= Кнопка крупного формата на мобильных ========= */
 @media only screen and (max-width: 600px) {
-    .button--huge {
-        padding: 12px;
-        font-size: 16px;
-    }
+	.button--huge {
+		padding: 12px;
+		font-size: 16px;
+	}
 }
 
+/* ========= Кнопка поиска ========= */
 .button--search {
-    width: 60px;
-    height: 60px;
-    padding: 18px;
+	width: 60px;
+	height: 60px;
+	padding: 18px;
 }
 
+/* ========= Кнопка подписки ========= */
 .button--subscribe {
-    width: 72px;
-    height: 72px;
-    padding: 28px;
+	width: 72px;
+	height: 72px;
+	padding: 28px;
 }
 
-/* Button More */
-
+/* ========= Кнопка "Подробнее" ========= */
 .button-more {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
 
-    padding: 10px;
-    height: 44px;
-    background: #F6F4FF;
-    border-radius: 12px;
-    font-size: 16px;
-    color: #5243C2;
+	padding: 10px;
+	height: 44px;
+	background: #f6f4ff;
+	border-radius: 12px;
+	font-size: 16px;
+	color: #5243c2;
 
-    transition: background-color 0.2s ease-in;
+	transition: background-color 0.2s ease-in;
 }
 
+/* ========= Наведение на кнопку "Подробнее" ========= */
 .button-more:hover {
-    background: #dcd8f1;
+	background: #dcd8f1;
 }

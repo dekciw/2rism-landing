@@ -1,45 +1,51 @@
+/* ========= Блокировка прокрутки ========= */
 .no-scroll {
 	overflow-y: hidden;
 }
 
+/* ========= Мобильное меню ========= */
 .mobile-nav {
 	position: fixed;
 	top: 0;
 	right: -320px;
 	width: 320px;
 	height: 100%;
-    z-index: 99;
+	z-index: 99;
 
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 
 	align-items: flex-start;
-    padding:40px;
+	padding: 40px;
 
-    /* background: linear-gradient(209deg, #4287b3 -17.38%, #133f6b 78.4%), #276195; */
 	background-color: #141d22;
 	transition: all 0.3s ease-in;
 }
 
+/* ========= Открытое меню ========= */
 .mobile-nav--open {
 	right: 0;
 }
 
-.mobile-nav a {
+/* ========= Ссылки мобильного меню ========= */
+.mobile-nav__link {
 	color: #fff;
 }
 
-.mobile-nav a:hover, .mobile-nav a.active {
+.mobile-nav__link:hover,
+.mobile-nav__link--active {
 	color: #a998ff;
 }
 
+/* ========= Список мобильного меню ========= */
 .mobile-nav__list {
 	display: grid;
 	gap: 20px;
 	text-transform: capitalize;
 }
 
-.mobile-nav-fade {
+/* ========= Затемнение под меню ========= */
+.mobile-nav__overlay {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -53,8 +59,8 @@
 	pointer-events: none;
 }
 
-
-.mobile-nav-fade--open {
+/* ========= Активное затемнение ========= */
+.mobile-nav__overlay--open {
 	opacity: 1;
 	pointer-events: all;
 }

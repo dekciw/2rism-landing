@@ -1,3 +1,4 @@
+// ========= Список стран для автодополнения =========
 const countryList = [
 	'Afghanistan',
 	'Albania',
@@ -262,7 +263,7 @@ const autoCompleteJS = new autoComplete({
 	},
 	events: {
 		input: {
-			selection: (event) => {
+			selection: event => {
 				const selection = event.detail.selection.value;
 				autoCompleteJS.input.value = selection;
 			},
@@ -271,5 +272,5 @@ const autoCompleteJS = new autoComplete({
 	resultsList: {
 		maxResults: 15,
 	},
-	searchEngine: 'strict', // strict | loose
+	searchEngine: 'strict',
 });

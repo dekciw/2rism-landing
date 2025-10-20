@@ -1,15 +1,3 @@
-# autoComplete.js :sparkles:
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/TarekRaafat/autoComplete.js)](https://badge.fury.io/gh/tarekraafat%2FautoComplete.js)
-[![npm](https://img.shields.io/npm/v/@tarekraafat/autocomplete.js)](https://badge.fury.io/js/%40tarekraafat%2Fautocomplete.js)
-![100% Javascript](https://img.shields.io/github/languages/top/TarekRaafat/autoComplete.js?color=yellow)
-![Zero Dependencies](https://img.shields.io/badge/Dependencies-0-blue.svg)
-[![Minified Size](https://badgen.net/bundlephobia/min/@tarekraafat/autocomplete.js@latest)](https://bundlephobia.com/package/@tarekraafat/autocomplete.js@latest)
-![Yes Maintained](https://img.shields.io/badge/Maintained%3F-yes-success)
-[![](https://data.jsdelivr.com/v1/package/npm/@tarekraafat/autocomplete.js/badge)](https://www.jsdelivr.com/package/npm/@tarekraafat/autocomplete.js)
-![npm](https://img.shields.io/npm/dm/@tarekraafat/autocomplete.js?label=npm)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/TarekRaafat/autoComplete.js)
 
 <br>
 <br>

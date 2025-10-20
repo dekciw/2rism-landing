@@ -1,65 +1,62 @@
+/* ========= Базовая кнопка ========= */
 .button {
-    display: flex;                                      /* Выставляем боковое отображение */
-    align-items: center;                                /* Выравниваем все элементы внутри контейнера */
-    column-gap: 10px;                                   /* Задаем расстояние между колонками */
-
-    padding: 24px;                                      /* Отступы внутри кнопки */
-    height: 72px;                                       /* Выставляем высоту кнопки */
-    
-    background: #7B61FF;                              /* Цвет кнопки кнопки */
-    border-radius: 12px;                                /* Закругление кнопки */
-
-    color: #fff;                                      /* Цвет текста кнопки */
-    font-size: 18px;
-    font-weight: 600;
-
-    transition: background-color 0.2s ease-in;           /* Анимация смены стиля кнопки */
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	padding: 24px;
+	height: 72px;
+	background: #7b61ff;
+	border-radius: 12px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	transition: background-color 0.2s ease-in;
 }
 
+/* ========= Наведение на кнопку ========= */
 .button:hover {
-    background-color: #6344ff;                         /* Смена цвета при наведении */
+	background-color: #6344ff;
 }
 
+/* ========= Кнопка крупного формата ========= */
 .button--huge {
-    padding: 24px;                                        /* Внутренние отступы */
-    font-size: 18px;                                      /* Размер шрифта */
-    font-weight: 600;                                     /* Стиль шрифта */
-
-    display: flex;                                        /* Выставляем боковое отображение */
-    column-gap: 8px;                                      /* Выставляем расстояние между колоннами */
-    align-items: center;                                  /* Всё по центру */
+	padding: 24px;
+	font-size: 18px;
+	font-weight: 600;
+	display: flex;
+	column-gap: 8px;
+	align-items: center;
 }
 
-
-.button--search {                                           
-    height: 60px;                                           /* Высота кнопки поиска */
-    width: 60px;                                            /* Ширина кнопки поиска */
-    padding: 18px;                                          /* Отступы внутри кнопки */
+/* ========= Кнопка поиска ========= */
+.button--search {
+	height: 60px;
+	width: 60px;
+	padding: 18px;
 }
 
+/* ========= Кнопка подписки ========= */
 .button--subscribe {
-    width: 72px;
-    height: 72px;
-    padding: 28px;
+	width: 72px;
+	height: 72px;
+	padding: 28px;
 }
 
-/* Button More */
-
+/* ========= Кнопка "Подробнее" ========= */
 .button-more {
-    display: flex;                                          /* Выставляем боковое отображение */
-    align-items: center;                                    /* Выставляем отображение по центру */
-    gap: 4px;                                               /* Расстояние между текстом и стрелочкой */
-
-    padding: 10px;                                          /* Внутренние отсутпы на кнопке */
-    height: 44px;                                           /* Высота кнопки */
-    background: #F6F4FF;                                  
-    border-radius: 12px;                                    /* Закругление кнопки */
-    font-size: 16px;
-    color: #5243c2;
-
-    transition: background-color 0.2s ease-in;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 10px;
+	height: 44px;
+	background: #f6f4ff;
+	border-radius: 12px;
+	font-size: 16px;
+	color: #5243c2;
+	transition: background-color 0.2s ease-in;
 }
 
+/* ========= Наведение на кнопку "Подробнее" ========= */
 .button-more:hover {
-    background: #dcd8f1;
+	background: #dcd8f1;
 }
