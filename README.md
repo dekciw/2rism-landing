@@ -49,3 +49,5 @@
 
 ## Лицензия
 MIT © 2025 dekciw
+
+<!-- Pull Shark 1 -->
